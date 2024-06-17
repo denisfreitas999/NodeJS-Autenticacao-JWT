@@ -1,4 +1,6 @@
 const database = require('../models');
+const { compare } = require('bcryptjs');
+const { sign } = require('jsonwebtoken');
 
 class AuthService {
 
@@ -11,8 +13,22 @@ class AuthService {
     });
 
     if (!usuario) {
-      throw new Error('Usuário não cadastrado');
+      throw new Error('Usuário não cadastrado.');
     }
+
+    const senhasIguais = await compare(dto.senha, usuario.senha);
+
+    if (!senhasIguais) {
+      throw new Error('Usuário ou senha inválidos.')
+    }
+
+    const accessToken = sign(
+      {
+        id: usuario.id,
+        email: usuario.email,
+      }, process.env.SECRET, { expiresIn: 86400 });
+
+    return accessToken;
   }
 }
 
