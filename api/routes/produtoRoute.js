@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const ProdutoController = require('../controllers/produtoController');
 const roles = require('../middleware/roles');
+const permissoes = require('../middleware/permissoes');
 
 const router = Router();
 
