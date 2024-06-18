@@ -32,7 +32,20 @@ class UsuarioService {
 
   async buscarTodosUsuarios() {
     try {
-      const usuarios = await database.usuarios.findAll();
+      const usuarios = await database.usuarios.findAll({
+        include: [
+          {
+            model: database.roles,
+            as: 'usuario_roles',
+            attributes: ['id', 'nome', 'descricao']
+          },
+          {
+            model: database.permissoes,
+            as: 'usuario_permissoes',
+            attributes: ['id', 'nome', 'descricao']
+          },
+        ]
+      });
       return usuarios;
     } catch (error) {
       throw new Error('Erro ao buscar todos os usuários.');
