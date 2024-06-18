@@ -67,8 +67,6 @@ Na quinta e última etapa, criamos middlewares para gerenciar permissões de ace
  ┃ ┃ ┣ 📜RoleController.js
  ┃ ┃ ┣ 📜SegurancaController.js
  ┃ ┃ ┗ 📜UsuarioController.js
- ┃ ┣ 📂docs
- ┃ ┃ ┗ 📜saiba-mais.md
  ┃ ┣ 📂middleware
  ┃ ┃ ┣ 📜autenticado.js
  ┃ ┃ ┣ 📜permissoes.js
@@ -107,6 +105,8 @@ Na quinta e última etapa, criamos middlewares para gerenciar permissões de ace
  ┃ ┃ ┣ 📜SegurancaService.js
  ┃ ┃ ┗ 📜UsuarioService.js
  ┃ ┗ 📜index.js
+ ┣ 📂docs
+ ┃ ┃ ┗ 📜saiba-mais.md
  ┣ 📜.editorconfig
  ┣ 📜.env
  ┣ 📜.eslintrc.json
