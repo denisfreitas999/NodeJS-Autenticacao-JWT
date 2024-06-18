@@ -16,3 +16,4 @@ npx sequelize-cli model:create --name roles_permissoes --attributes role_id:uuid
 
 npx sequelize-cli db:migrate
 
+npx sequelize-cli db:migrate:undo
